@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node src/seed.js)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3001/api/health)",
+      "Bash(Start-Process -NoNewWindow powershell -ArgumentList \"-Command\", \"npm run dev\")",
+      "Bash(curl -s \"http://localhost:3001/api/tickets/stats\")",
+      "Bash(curl -s \"http://localhost:3001/api/tickets?limit=2\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f'Total: {d[\\\\\"total\\\\\"]}, Pages: {d[\\\\\"pages\\\\\"]}'\\); [print\\(t['title'], t['status'], t['assignedAgent']\\) for t in d['tickets']]\")",
+      "Bash(node -e \"const d=JSON.parse\\(require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\)\\); console.log\\('Total:',d.total,'Pages:',d.pages\\); d.tickets.forEach\\(t=>console.log\\(t.title, '|', t.status, '|', t.assignedAgent\\)\\)\")",
+      "Bash(curl -s \"http://localhost:3001/api/tickets?limit=3\")",
+      "Bash(curl -s http://localhost:5173)",
+      "mcp__Claude_in_Chrome__navigate",
+      "Bash(netstat -ano)",
+      "Bash(findstr :3001)",
+      "Bash(findstr LISTENING)",
+      "PowerShell(Stop-Process -Id 4020 -Force)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 3001,5173,5174 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }; Write-Output \"Ports cleared\")",
+      "Bash(node -e ' *)",
+      "Bash(node -e \"const admin = require\\('firebase-admin'\\); console.log\\(typeof admin.credential, Object.keys\\(admin\\).slice\\(0,8\\)\\);\")",
+      "Bash(curl -s http://localhost:3001/api/tickets/stats)",
+      "Bash(curl -s -X POST http://localhost:3001/api/tickets -H 'Content-Type: application/json' -d '{\"title\":\"Hi\",\"description\":\"short\",\"category\":\"Bug\",\"priority\":\"High\"}')",
+      "Bash(curl -s -X POST http://localhost:3001/api/tickets -H 'Content-Type: application/json' -d '{\"title\":\"Test SLA ticket for demo\",\"description\":\"This is a test ticket with enough description length to pass validation\",\"category\":\"Bug\",\"priority\":\"Critical\"}')",
+      "Bash(curl -s 'http://localhost:3001/api/tickets?limit=2&sort=priority')",
+      "Bash(curl -s http://localhost:3001/api/tickets?limit=1)",
+      "mcp__visualize__read_me"
+    ]
+  }
+}
